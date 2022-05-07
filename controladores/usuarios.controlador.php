@@ -111,7 +111,11 @@ class ControladorUsuarios{
 
 					$directorio = "vistas/img/usuarios/".$_POST["nuevoUsuario"];
 
-					mkdir($directorio, 0755);
+					//mkdir($directorio, 0755);
+					if (!file_exists($directorio)) {
+						// code...
+						mkdir($directorio, 0777, true);
+					}
 
 					/*=============================================
 					DE ACUERDO AL TIPO DE IMAGEN APLICAMOS LAS FUNCIONES POR DEFECTO DE PHP
