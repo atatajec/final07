@@ -100,7 +100,7 @@ class ControladorUsuarios{
 
 				if (!$_FILES["nuevaFoto"]["tmp_name"]) {
 					// code...
-					if(isset($_FILES["nuevaFoto"]["tmp_name"])){
+					if(isset($_FILES["nuevaFoto"]["tmp_name"]) && strlen($_FILES["nuevaFoto"]["tmp_name"]) > 0){
 
 						list($ancho, $alto) = getimagesize($_FILES["nuevaFoto"]["tmp_name"]);
 
